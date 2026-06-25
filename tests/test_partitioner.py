@@ -20,7 +20,7 @@ from shapely.geometry import MultiPolygon, Polygon
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from ..src.partitioner import build_partitions
+from mission_partitioner.partitioner import build_partitions
 
 # 1 km × 1 km square in UTM metres
 SQUARE = Polygon([(0, 0), (1000, 0), (1000, 1000), (0, 1000)])

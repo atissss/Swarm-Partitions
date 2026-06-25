@@ -22,7 +22,7 @@ from shapely.geometry import MultiPolygon, Polygon
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from src.mission_partitioner.exporter import export_json, poly_to_latlon
+from mission_partitioner.exporter import export_json, poly_to_latlon
 
 TO_LATLON = Transformer.from_crs("epsg:32643", "epsg:4326", always_xy=True)
 EPSG = "epsg:32643"

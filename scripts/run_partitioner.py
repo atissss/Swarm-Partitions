@@ -16,11 +16,11 @@ from pathlib import Path
 # Allow running from the repo root without installing the package
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from ..src.dynamic_mode import run_interactive_loop
-from ..src.exporter import export_json
-from ..src.kml_loader import load_kml
-from ..src.partitioner import build_partitions
-from ..src.visualiser import make_figure
+from mission_partitioner.dynamic_mode import run_interactive_loop
+from mission_partitioner.exporter import export_json
+from mission_partitioner.kml_loader import load_kml
+from mission_partitioner.partitioner import build_partitions
+from mission_partitioner.visualiser import make_figure
 
 
 def parse_args() -> argparse.Namespace:

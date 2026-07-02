@@ -67,14 +67,17 @@ def main() -> None:
     boundary           = kml_data["boundary"]
     predetermined_nogo = kml_data["nogo"]
     home               = kml_data["home"]       # (lon, lat) or None
+    to_meters          = kml_data["to_meters"]
     to_latlon          = kml_data["to_latlon"]
     epsg_code          = kml_data["epsg_code"]
     nogo_polys         = [p for _, p in predetermined_nogo]
 
-    if home:
+    if home is not None:
         print(f"[run] Home point: lon={home[0]:.6f}, lat={home[1]:.6f}")
+        home_point = to_meters.transform(home[0], home[1])
     else:
         print("[run] No home point defined in KML.")
+        home_point = None
 
     # 2. Build partitions
     print(
@@ -99,6 +102,7 @@ def main() -> None:
         predetermined_nogo=predetermined_nogo,
         boundary=boundary,
         n_parts=args.parts,
+        home_point=home_point,
     )
 
     # 4. Export JSON

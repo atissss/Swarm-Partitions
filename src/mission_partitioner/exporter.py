@@ -174,13 +174,13 @@ def export_json(
                 }
                 for name, p in predetermined_nogo
             ],
-            "dynamic": [
-                {
-                    "id":       i + 1,
-                    "geometry": poly_to_latlon(p, to_latlon),
-                }
-                for i, p in enumerate(dynamic_nogo)
-            ],
+            # "dynamic": [
+            #     {
+            #         "id":       i + 1,
+            #         "geometry": poly_to_latlon(p, to_latlon),
+            #     }
+            #     for i, p in enumerate(dynamic_nogo)
+            # ],
         },
     }
 

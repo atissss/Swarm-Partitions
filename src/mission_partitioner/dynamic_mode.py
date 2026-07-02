@@ -87,6 +87,7 @@ def run_interactive_loop(
     predetermined_nogo: list[tuple[str, Polygon]],
     boundary: Polygon,
     n_parts: int,
+    home_point: tuple[float, float] | None = None,
 ) -> list[Polygon]:
     """
     Display the partitioned map and let the user draw dynamic no-go zones.
@@ -118,6 +119,7 @@ def run_interactive_loop(
             predetermined_nogo=predetermined_nogo,
             dynamic_nogo=dynamic_nogo,
             n_parts=n_parts,
+            home_point=home_point,
         )
 
         pts = plt.ginput(n=-1, timeout=0)

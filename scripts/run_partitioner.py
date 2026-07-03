@@ -6,14 +6,12 @@ Command-line entry point for the mission partitioner.
 Usage
 -----
     python scripts/run_partitioner.py --kml data/input/Mission_Area.kml --parts 5
-    python scripts/run_partitioner.py --kml data/input/Mission_Area.kml --parts 5 \\
-        --output data/output/result.json --seed 123 \\
-        --min-area 1000 --min-width 15
+    python scripts/run_partitioner.py --kml data/input/Mission_Area.kml --parts 5 --output data/output/result.json --seed 123 --min-area 1000 --min-width 15
 """
 
 import argparse
 import sys
-from pathlib import Path
+from pathlib import Path.
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 

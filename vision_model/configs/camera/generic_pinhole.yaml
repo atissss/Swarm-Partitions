@@ -1,0 +1,14 @@
+# Generic pinhole camera intrinsics/extrinsics, for testing or as a
+# starting point when calibrated values for your specific airframe aren't
+# available yet. Replace with a calibrated config (see dji_mavic3.yaml) for
+# production geo-tagging accuracy.
+intrinsics:
+  focal_length_px: [1000.0, 1000.0]
+  principal_point_px: [960.0, 540.0]
+  image_size_px: [1920, 1080]
+  distortion: []
+
+extrinsics:
+  # Camera co-located with the drone body origin, no rotational offset.
+  translation_m: [0.0, 0.0, 0.0]
+  rotation_deg: [0.0, 0.0, 0.0]

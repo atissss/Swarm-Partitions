@@ -11,9 +11,9 @@ Usage
 
 import argparse
 import sys
-from pathlib import Path.
+from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from mission_partitioner.dynamic_mode import run_interactive_loop
 from mission_partitioner.exporter import export_json

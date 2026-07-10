@@ -1,0 +1,25 @@
+# Template for adding a new/custom drone dataset with minimal code changes.
+#
+# Steps:
+#   1. Implement a new `AerialDetectionDataset` subclass in
+#      `src/vision_model/datasets/<my_dataset>.py`, following the pattern in
+#      `visdrone.py` (parse your annotation format into `BoxAnnotation`s in
+#      `load_index()`).
+#   2. Register it: `register("my_dataset", MyDatasetClass)` in
+#      `datasets/registry.py` (or call `register()` from your own module).
+#   3. Copy this file to `configs/dataset/my_dataset.yaml` and fill in the
+#      fields below.
+#   4. If you'll train with Ultralytics YOLO, also write a matching
+#      `<my_dataset>_yolo_data.yaml` (see `visdrone_yolo_data.yaml` for the
+#      expected shape) and point `yolo_data_yaml` at it.
+
+name: my_dataset
+class_names: [car, person]
+
+splits:
+  train:
+    root: data/my_dataset/train
+  val:
+    root: data/my_dataset/val
+
+yolo_data_yaml: configs/dataset/my_dataset_yolo_data.yaml

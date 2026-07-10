@@ -1,0 +1,18 @@
+# VisDrone-DET dataset configuration.
+# `root` points at the *split-specific* directory containing images/ and
+# annotations/ subfolders (see datasets/visdrone.py for the expected layout).
+name: visdrone
+class_names: [car, person]
+
+splits:
+  train:
+    root: data/VisDrone2019-DET-train
+  val:
+    root: data/VisDrone2019-DET-val
+  test:
+    root: data/VisDrone2019-DET-test-dev
+
+# Path to an Ultralytics-format data YAML (path/train/val/names) used only
+# by Detector.train()/validate() — kept separate from the fields above
+# because Ultralytics owns that file's schema, not this pipeline.
+yolo_data_yaml: configs/dataset/visdrone_yolo_data.yaml

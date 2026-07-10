@@ -1,0 +1,7 @@
+# Geo-tagging task configuration, consumed by cli.geotag and geotagging.geotagger.
+telemetry_source: data/flight_logs/example_flight.csv
+max_telemetry_delta_seconds: 0.5
+ground_elevation_msl: 0.0   # assumed flat-ground elevation (meters MSL)
+ground_model: flat_earth     # "flat_earth" | "dtm" (Phase 5)
+export_formats: [json, csv, geojson]
+output_dir: outputs/geotags

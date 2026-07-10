@@ -30,7 +30,8 @@ dev = [
 mission-partitioner = "mission_partitioner.run_partitioner:main"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
+include = ["mission_partitioner*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,0 +1,14 @@
+# AU-AIR dataset configuration. `root` points at a directory containing
+# images/ and annotations.json (see datasets/auair.py for the expected
+# layout). AU-AIR frames carry their own capture timestamp, threaded
+# through into ImageSample.telemetry_timestamp for geo-tagging.
+name: auair
+class_names: [car, person]
+
+splits:
+  train:
+    root: data/auair/train
+  val:
+    root: data/auair/val
+
+yolo_data_yaml: configs/dataset/auair_yolo_data.yaml

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [vision-model, main]
+  pull_request:
+    branches: [vision-model, main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Fast lane: the test suite exercises every package's *logic* without
+      # needing torch/ultralytics/albumentations installed (each is
+      # lazy-imported and only required by tests that specifically opt in
+      # via those extras). This keeps CI fast on every push. If you add
+      # tests that genuinely need a trained model or a real training run,
+      # add a separate `full` job that also installs
+      # `pip install -e ".[dev]" torch ultralytics albumentations`.
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]" --no-deps
+          pip install numpy pyyaml hydra-core omegaconf opencv-python-headless \
+                      pymap3d pyproj geographiclib pytest pytest-cov black ruff
+
+      - name: Black (format check)
+        run: black --check src tests --line-length 100
+
+      - name: Ruff (lint)
+        run: ruff check src tests
+
+      - name: Pytest
+        run: pytest --cov=vision_model --cov-report=term-missing

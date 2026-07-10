@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Data, weights, and run artifacts are large/binary and don't belong in git
+data/
+runs/
+outputs/
+*.pt
+*.pth
+*.onnx
+
+.DS_Store

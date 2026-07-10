@@ -1,0 +1,13 @@
+# Root Hydra configuration. Compose overrides on the command line, e.g.:
+#   python -m vision_model.cli.train dataset=visdrone model=yolov_detect train.epochs=100
+defaults:
+  - dataset: visdrone
+  - model: yolov_detect
+  - camera: generic_pinhole
+  - train: default
+  - inference: default
+  - geotag: default
+  - _self_
+
+seed: 42
+output_root: runs

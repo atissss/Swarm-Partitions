@@ -1,0 +1,13 @@
+# Inference task configuration.
+confidence_threshold: 0.25
+iou_threshold: 0.5
+allowed_classes: [car, person]
+save_visualizations: true
+output_dir: outputs/inference
+
+# Video-mode fields, used by cli.infer_video only.
+video_path: data/flights/example_flight.mp4
+video_start_timestamp: "2026-07-01T00:00:00Z"
+video_fps: null  # null = read from the video file itself
+video_fourcc: mp4v  # use "MJPG" + a .avi output path if mp4v isn't supported by your OpenCV build
+video_output_path: outputs/inference/annotated.mp4

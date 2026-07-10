@@ -19,21 +19,22 @@ A modular Python toolkit for partitioning UAV/drone mission areas defined in KML
 ```
 mission-partitioner/
 ├── src/
-│   └── mission_partitioner/
-│       ├── kml_loader.py       # KML parsing + UTM projection
-│       ├── partitioner.py      # KMeans + Voronoi + orphan merging
-│       ├── exporter.py         # JSON serialisation
-│       ├── visualiser.py       # matplotlib rendering
-│       └── dynamic_mode.py     # Interactive no-go zone loop
+│   └── mission_partitioner/    # Main partitioning package
+│       ├── kml_loader.py
+│       ├── partitioner.py
+│       ├── exporter.py
+│       ├── visualiser.py
+│       └── dynamic_mode.py
 ├── scripts/
-│   └── run_partitioner.py      # CLI entry point
-├── tests/
-│   ├── test_kml_loader.py
-│   ├── test_partitioner.py
-│   └── test_exporter.py
+│   └── run_partitioner.py       # CLI entry point
+├── tests/                      # Main package tests
 ├── data/
-│   ├── input/                  # Place your .kml files here
-│   └── output/                 # JSON outputs written here
+│   ├── input/
+│   └── output/
+├── vision_model/               # Separate vision/geotagging subproject
+│   ├── pyproject.toml
+│   ├── README.md
+│   └── src/vision_model/
 ├── pyproject.toml
 ├── requirements.txt
 └── .github/workflows/ci.yml

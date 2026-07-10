@@ -1,0 +1,15 @@
+# Example per-airframe camera config. Replace focal_length_px/
+# principal_point_px/distortion with your own calibration (e.g. via OpenCV
+# checkerboard calibration) — the values below are illustrative placeholders,
+# not verified factory specs.
+intrinsics:
+  focal_length_px: [2568.0, 2568.0]
+  principal_point_px: [2000.0, 1500.0]
+  image_size_px: [4000, 3000]
+  distortion: [-0.021, 0.011, 0.0, 0.0, -0.003]  # k1, k2, p1, p2, k3
+
+extrinsics:
+  # Camera gimbal mount offset from the drone body origin, measured in the
+  # field or from the airframe's mechanical drawings.
+  translation_m: [0.05, 0.0, 0.08]
+  rotation_deg: [0.0, 0.0, 0.0]  # gimbal handles attitude; mount itself is unrotated

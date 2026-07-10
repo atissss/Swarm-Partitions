@@ -2,7 +2,7 @@
 name: yolo
 model_path: yolov8n.pt  # pretrained checkpoint to fine-tune from, or a
                          # previously saved runs/<run>/last.pt to resume from
-device: auto             # "auto" | "cpu" | "cuda:0" | ...
+device: cpu             # "auto" | "cpu" | "cuda:0" | ...
 
 class_map:
   0: car

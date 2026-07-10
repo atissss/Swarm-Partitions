@@ -46,22 +46,27 @@ def run_command(cmd: list[str]) -> None:
     subprocess.run(cmd, cwd=VISION_ROOT, check=True)
 
 
+def build_train_command(args: argparse.Namespace) -> list[str]:
+    cmd = [args.python, "-m", "vision_model.cli.train", "dataset=visdrone"]
+    if args.train_root:
+        cmd.extend([f"dataset.splits.train.root={args.train_root}"])
+    if args.val_root:
+        cmd.extend([f"dataset.splits.val.root={args.val_root}"])
+    else:
+        cmd.extend(["dataset.splits.val.root=data/VisDrone2019-DET-val"])
+    if args.epochs:
+        cmd.extend([f"train.epochs={args.epochs}"])
+    if args.run_name:
+        cmd.extend([f"train.run_name={args.run_name}"])
+    return cmd
+
+
 def main() -> None:
     args = build_parser().parse_args()
     os.environ.setdefault("PYTHONPATH", str(VISION_ROOT / "src"))
 
     if args.mode == "train":
-        cmd = [args.python, "-m", "vision_model.cli.train", "dataset=visdrone"]
-        if args.train_root:
-            cmd.extend([f"dataset.train.root={args.train_root}"])
-        if args.val_root:
-            cmd.extend([f"dataset.val.root={args.val_root}"])
-        else:
-            cmd.extend(["dataset.val.root=data/VisDrone2019-DET-val"])
-        if args.epochs:
-            cmd.extend([f"train.epochs={args.epochs}"])
-        if args.run_name:
-            cmd.extend([f"train.run_name={args.run_name}"])
+        cmd = build_train_command(args)
         run_command(cmd)
 
     elif args.mode == "infer":

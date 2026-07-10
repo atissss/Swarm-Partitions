@@ -74,6 +74,8 @@ def main() -> None:
             cmd.extend(["dataset.val.root=data/VisDrone2019-DET-val"])
         if args.model:
             cmd.extend([f"model.model_path={args.model}"])
+        else:
+            cmd.extend(["model.model_path=data/models/exp003/best.pt"])
         run_command(cmd)
 
     elif args.mode == "evaluate":
@@ -86,6 +88,8 @@ def main() -> None:
             cmd.extend(["dataset.val.root=data/VisDrone2019-DET-val"])
         if args.model:
             cmd.extend([f"model.model_path={args.model}"])
+        else:
+            cmd.extend(["model.model_path=data/models/exp003/best.pt"])
         run_command(cmd)
 
     elif args.mode == "geotag":
@@ -96,6 +100,8 @@ def main() -> None:
             cmd.extend([f"geotag.telemetry_source={args.telemetry}"])
         if args.model:
             cmd.extend([f"model.model_path={args.model}"])
+        else:
+            cmd.extend(["model.model_path=data/models/exp003/best.pt"])
         if args.camera:
             cmd.extend([f"camera={args.camera}"])
         run_command(cmd)

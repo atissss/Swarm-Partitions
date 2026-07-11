@@ -1,8 +1,8 @@
 # Detector backend configuration, consumed by models.registry.build_detector.
 name: yolo
 model_path: yolov8n.pt  # pretrained checkpoint to fine-tune from, or a
-                         # previously saved runs/<run>/last.pt to resume from
-device: cpu             # "auto" | "cpu" | "cuda:0" | ...
+                        # previously saved runs/<run>/last.pt to resume from
+device: cuda            # "auto" | "cpu" | "cuda:0" | ...
 
 class_map:
   0: car

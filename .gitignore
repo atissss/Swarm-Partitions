@@ -16,6 +16,11 @@ build/
 # Outputs and local data
 data/output/*.json
 data/input/*.kml
+runs/
+outputs/
+*.pt
+*.pth
+*.onnx
 
 # IDE folders
 .vscode/

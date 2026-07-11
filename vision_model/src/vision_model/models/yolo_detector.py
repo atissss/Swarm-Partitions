@@ -24,8 +24,18 @@ logger = get_logger(__name__)
 # Default mapping from the trained model's class indices to this pipeline's
 # class names. Must match the `names:` order in the dataset YAML the model
 # was trained with (see configs/dataset/visdrone.yaml).
-DEFAULT_CLASS_MAP: dict[int, ClassName] = {0: "car", 1: "person"}
-
+DEFAULT_CLASS_MAP: dict[int, ClassName] = {
+    0: "pedestrian",
+    1: "people",
+    2: "bicycle",
+    3: "car",
+    4: "van",
+    5: "truck",
+    6: "tricycle",
+    7: "awning-tricycle",
+    8: "bus",
+    9: "motor",
+}
 
 def _require_ultralytics() -> Any:
     try:

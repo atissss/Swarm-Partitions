@@ -2,7 +2,7 @@
 # `root` points at the *split-specific* directory containing images/ and
 # annotations/ subfolders (see datasets/visdrone.py for the expected layout).
 name: visdrone
-class_names: [car, person]
+class_names: [pedestrian, people, bicycle, car, van, truck, tricycle, awning-tricycle, bus, motor]
 
 splits:
   train:

@@ -5,6 +5,10 @@ Examples:
     python scripts/run_vision_workflow.py --mode train
     python scripts/run_vision_workflow.py --mode infer --dataset-root data/VisDrone2019-DET-val --model runs/exp002/best.pt
     python scripts/run_vision_workflow.py --mode evaluate --dataset-root data/VisDrone2019-DET-val --model runs/exp002/best.pt
+
+    .\.venv312\Scripts\python.exe -m vision_model.cli.train dataset=visdrone dataset.yolo_data_yaml=vision_model/configs/dataset/visdrone_yolo_data.yaml model.device=cuda train.epochs=100 train.run_name=exp001
+
+    .\.venv312\Scripts\python.exe -m vision_model.cli.infer dataset=visdrone model.model_path=runs/exp001/best.pt
 """
 
 from __future__ import annotations

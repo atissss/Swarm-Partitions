@@ -1,11 +1,19 @@
 # Ultralytics-format dataset descriptor, consumed by Detector.train()/validate()
 # (Ultralytics' YOLO.train(data=...) expects exactly this shape). Class index
 # order here MUST match models.yolo_detector.DEFAULT_CLASS_MAP.
-path: data
+path: vision_model/data
 train: VisDrone2019-DET-train/images
 val: VisDrone2019-DET-val/images
 test: VisDrone2019-DET-test-dev/images
 
 names:
-  0: car
-  1: person
+  0: pedestrian
+  1: people
+  2: bicycle
+  3: car
+  4: van
+  5: truck
+  6: tricycle
+  7: awning-tricycle
+  8: bus
+  9: motor

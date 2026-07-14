@@ -2,6 +2,6 @@
 run_name: exp001
 epochs: 100
 image_size: 640
-batch: -1
+batch: 8
 patience: 20  # early-stopping patience, in epochs without mAP improvement
 resume: false  # if true, load runs/<output_root>/<run_name>/last.pt before training

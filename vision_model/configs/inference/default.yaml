@@ -1,7 +1,7 @@
 # Inference task configuration.
 confidence_threshold: 0.25
 iou_threshold: 0.5
-allowed_classes: [car, person]
+allowed_classes: [pedestrian, people, bicycle, car, van, truck, tricycle, awning-tricycle, bus, motor]
 save_visualizations: true
 output_dir: outputs/inference
 

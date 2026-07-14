@@ -13,7 +13,18 @@ from typing import Any
 from vision_model.utils.exceptions import ConfigError
 
 _REQUIRED_TOP_LEVEL_GROUPS = ("dataset", "model", "camera", "train", "inference", "geotag")
-_VALID_CLASSES = {"car", "person"}
+_VALID_CLASSES = {
+    "pedestrian",
+    "people",
+    "bicycle",
+    "car",
+    "van",
+    "truck",
+    "tricycle",
+    "awning-tricycle",
+    "bus",
+    "motor",
+}
 
 
 def _require(cfg: Any, path: str) -> Any:

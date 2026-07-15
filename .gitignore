@@ -16,7 +16,10 @@ build/
 # Outputs and local data
 data/output/*.json
 data/input/*.kml
-
+Vision/RoadVehiclesYOLODatasetPro/test
+Vision/RoadVehiclesYOLODatasetPro/val
+Vision/RoadVehiclesYOLODatasetPro/train
+Vision/runs
 # IDE folders
 .vscode/
 .idea/

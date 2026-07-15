@@ -1,0 +1,14 @@
+#Dataset configuration.
+path: RoadVehiclesYOLODatasetPro/
+train: train/images
+val: val/images
+test: test/images
+
+#Class numbers.
+nc: 3
+
+#Class names.
+names:
+  0: small-vehicle
+  1: large-vehicle
+  2: human

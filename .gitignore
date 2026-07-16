@@ -20,7 +20,9 @@ data/input/*.kml
 Vision/RoadVehiclesYOLODatasetPro/test
 Vision/RoadVehiclesYOLODatasetPro/val
 Vision/RoadVehiclesYOLODatasetPro/train
-Vision/runs
+Vision/runs/
+*.pt
+
 # IDE folders
 .vscode/
 .idea/

@@ -22,6 +22,7 @@ Vision/RoadVehiclesYOLODatasetPro/val
 Vision/RoadVehiclesYOLODatasetPro/train
 Vision/RoadVehiclesYOLODatasetPro/runs
 Vision/kaggleRuns/
+Vision/testruns/
 *.pt
 
 # IDE folders
